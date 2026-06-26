@@ -14,43 +14,15 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Setup Node.js (for testing)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-      
-      - name: Install dependencies (if any)
+      - name: Verify required files exist
         run: |
-          # No dependencies for vanilla HTML/CSS/JS
-          echo "No dependencies to install"
+          echo "Checking required files..."
+          [ -f "index.html" ] && echo "index.html found" || { echo "index.html missing"; exit 1; }
+          [ -f "style.css" ] && echo "style.css found" || { echo "style.css missing"; exit 1; }
+          [ -f "script.js" ] && echo "script.js found" || { echo "script.js missing"; exit 1; }
+          echo " All required files present!"
       
-      - name: Run linting (optional)
-        run: |
-          # You can add HTML/CSS/JS linting here if you want
-          echo "Running basic checks..."
-          # Check if index.html exists
-          if [ -f "index.html" ]; then
-            echo "✅ index.html found"
-          else
-            echo "❌ index.html missing!"
-            exit 1
-          fi
-          
-          if [ -f "style.css" ]; then
-            echo "✅ style.css found"
-          else
-            echo "❌ style.css missing!"
-            exit 1
-          fi
-          
-          if [ -f "script.js" ]; then
-            echo "✅ script.js found"
-          else
-            echo "❌ script.js missing!"
-            exit 1
-          fi
-      
-      - name: Upload build artifacts (for CD to use)
+      - name: Upload artifacts for CD
         uses: actions/upload-artifact@v4
         with:
           name: portfolio-files
@@ -62,4 +34,4 @@ jobs:
             *.png
             *.jpeg
             *.gif
-            *.sv
+            *.svg
