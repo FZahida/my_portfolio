@@ -2,26 +2,24 @@ name: CI - Build and Test
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
+  workflow_call:  
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      
-      - name: Verify required files exist
+
+      - name: Verify required files
         run: |
           echo "Checking required files..."
           [ -f "index.html" ] && echo "index.html found" || { echo "index.html missing"; exit 1; }
           [ -f "style.css" ] && echo "style.css found" || { echo "style.css missing"; exit 1; }
           [ -f "script.js" ] && echo "script.js found" || { echo "script.js missing"; exit 1; }
-          echo " All required files present!"
-      
+          echo "All files present!"
+
       - name: Upload artifacts for CD
         uses: actions/upload-artifact@v4
         with:
@@ -33,5 +31,3 @@ jobs:
             *.jpg
             *.png
             *.jpeg
-            *.gif
-            *.svg

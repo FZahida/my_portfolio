@@ -5,7 +5,7 @@ on:
     workflows: [CI - Build and Test]
     types:
       - completed
-    branches: [main]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -29,6 +29,8 @@ jobs:
         with:
           name: portfolio-files
           path: .
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          run-id: ${{ github.event.workflow_run.id }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
