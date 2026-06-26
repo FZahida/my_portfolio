@@ -1,0 +1,60 @@
+name: CI - Build and Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js (for testing)
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+      
+      - name: Install dependencies (if any)
+        run: |
+          # No dependencies for vanilla HTML/CSS/JS
+          echo "No dependencies to install"
+      
+      - name: Run linting (optional)
+        run: |
+          # You can add HTML/CSS/JS linting here if you want
+          echo "Running basic checks..."
+          # Check if index.html exists
+          if [ -f "index.html" ]; then
+            echo "✅ index.html found"
+          else
+            echo "❌ index.html missing!"
+            exit 1
+          fi
+          
+          if [ -f "style.css" ]; then
+            echo "✅ style.css found"
+          else
+            echo "❌ style.css missing!"
+            exit 1
+          fi
+          
+          if [ -f "script.js" ]; then
+            echo "✅ script.js found"
+          else
+            echo "❌ script.js missing!"
+            exit 1
+          fi
+      
+      - name: Upload build artifacts (for CD to use)
+        uses: actions/upload-artifact@v4
+        with:
+          name: portfolio-files
+          path: |
+            index.html
+            style.css
+            script.js
