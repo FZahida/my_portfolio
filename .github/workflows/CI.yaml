@@ -58,3 +58,8 @@ jobs:
             index.html
             style.css
             script.js
+            *.jpg
+            *.png
+            *.jpeg
+            *.gif
+            *.sv
