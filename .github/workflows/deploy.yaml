@@ -33,6 +33,11 @@ jobs:
         with:
           name: portfolio-files
           path: .
+          # Add this to prevent errors if artifact doesn't exist
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: List downloaded files (debug)
+        run: ls -la
       
       - name: Setup Pages
         uses: actions/configure-pages@v5
