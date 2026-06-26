@@ -2,10 +2,10 @@ name: CD - Deploy to GitHub Pages
 
 on:
   workflow_run:
-    workflows: ["CI - Build and Test"]
+    workflows: [CI - Build and Test]
     types:
       - completed
-    branches: [ "main" ]
+    branches: [main]
 
 permissions:
   contents: read
@@ -13,85 +13,31 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: pages
   cancel-in-progress: false
 
 jobs:
   deploy:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latestname: CD - Deploy to GitHub Pages
-
-on:
-  workflow_run:
-    workflows: ["CI - Build and Test"]
-    types:
-      - completed
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
-
-jobs:
-  deploy:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Download built artifacts from CI
+      - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: portfolio-files
           path: .
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      
-      - name: Upload artifact for Pages
+
+      - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: .
-      
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
-    
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      
-      - name: Download built artifacts from CI
-        uses: actions/download-artifact@v4
-        with:
-          name: portfolio-files
-          path: .
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-      
-      - name: List downloaded files (debug)
-        run: ls -la
-      
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      
-      - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
