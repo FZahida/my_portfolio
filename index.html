@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
   <header>
@@ -20,83 +21,101 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="hamburger" id="hamburger">☰</div>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="hamburger" id="hamburger">☰</div>
+      </div>
     </nav>
   </header>
 
   <main>
-    <!-- About -->
+    <!-- Hero / About -->
     <section id="about" class="hero">
       <div class="hero-content">
         <h1>Hello, I'm <span>Fathima Zahida</span></h1>
-        <p>Physical Science-ICT Undergraduate | Tech Enthusiast</p>
-        <p>I love building smart systems, automating workflows, and solving real-world problems with technology.</p>
-        <a href="#contact" class="btn">Get in Touch</a>
+        <p class="subtitle">Physical Science (ICT) Undergraduate | Tech Enthusiast</p>
+        <p>I love building smart systems, automating workflows, and solving real world problems with technology.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn">Get in Touch</a>
+          <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
       </div>
       <div class="hero-image">
-        <!-- Replace the placeholder link with your own photo if you like -->
-        <img src="Fathima Zahida.JPG" alt="Profile Photo" />
+        <img src="Fathima Zahida.jpeg" alt="Fathima Zahida" />
       </div>
     </section>
 
     <!-- Education -->
     <section id="education">
-      <h2>Education</h2>
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
       <div class="edu-card">
-        <h3>Bachelor of Science in Physical Science-ICT</h3>
-        <p><strong>University of Sri Jayawardenepura</strong></p>
-        <p>Focus areas: Full Stack Developing, Database Management, DevOps, and Software Engineering.</p>
+        <h3>Bachelor of Science in Physical Science (ICT)</h3>
+        <p>Focus areas: Data Structures and Algorithm, Database Management, DevOps, and Software Engineering.</p>
       </div>
     </section>
 
     <!-- Skills -->
     <section id="skills">
-      <h2>Skills</h2>
+      <h2><i class="fas fa-code"></i> Skills</h2>
       <div class="skills-grid">
-        <div class="skill">HTML5 & CSS3</div>
-        <div class="skill">JavaScript</div>
-        <div class="skill">Git & GitHub</div>
-        <div class="skill">CI/CD (GitHub Actions)</div>
-        <div class="skill">Python</div>
-        <div class="skill">SQL & Databases</div>
-        <div class="skill">System Analysis</div>
-        <div class="skill">Project Management</div>
-        <div class="skill">Docker</div>
-        <div class="skill">React</div>
+        <div class="skill"><i class="fab fa-html5"></i> HTML5 & CSS3</div>
+        <div class="skill"><i class="fab fa-js"></i> JavaScript</div>
+        <div class="skill"><i class="fab fa-git-alt"></i> Git & GitHub</div>
+        <div class="skill"><i class="fas fa-rocket"></i> CI/CD (GitHub Actions)</div>
+        <div class="skill"><i class="fab fa-python"></i> Python</div>
+        <div class="skill"><i class="fas fa-database"></i> SQL & Databases</div>
+        <div class="skill"><i class="fas fa-chart-line"></i> System Analysis</div>
+        <div class="skill"><i class="fas fa-tasks"></i> Project Management</div>
       </div>
     </section>
 
     <!-- Projects -->
     <section id="projects">
-      <h2>Projects</h2>
+      <h2><i class="fas fa-project-diagram"></i> Projects</h2>
       <div class="project-grid">
         <div class="project-card">
-          <h3>📦 Logistics Management System</h3>
-          <p>Streamlined supply chain operations with inventory tracking, order fulfillment, and real‑time shipment monitoring.</p>
-          <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+          <div class="project-icon"><i class="fas fa-truck"></i></div>
+          <h3>Logistics Management System</h3>
+          <p>Streamlined supply chain operations with inventory tracking, order fulfillment, and real-time shipment monitoring.</p>
+          <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Source</a>
+          </div>
         </div>
         <div class="project-card">
-          <h3>📊 Sales Management System</h3>
-          <p>A comprehensive platform for managing customer data, product catalogs, invoicing, and generating detailed sales reports for retail businesses.</p>
-          <a href="#">Live Demo</a> | <a href="#">Source Code</a>
+          <div class="project-icon"><i class="fas fa-chart-bar"></i></div>
+          <h3>Sales Management System</h3>
+          <p>A comprehensive platform for managing customer data, product catalogs, invoicing, and generating detailed sales reports.</p>
+          <div class="project-links">
+            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+            <a href="#"><i class="fab fa-github"></i> Source</a>
+          </div>
         </div>
-        <!-- You can add a third project here if you want -->
       </div>
     </section>
 
     <!-- Contact -->
     <section id="contact">
-      <h2>Contact</h2>
+      <h2><i class="fas fa-envelope"></i> Contact</h2>
       <form id="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
+        <div class="form-group">
+          <input type="text" placeholder="Your Name" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Your Email" required />
+        </div>
+        <div class="form-group">
+          <textarea placeholder="Your Message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
       </form>
       <div class="social-links">
-        <a href="https://github.com/FZahida">GitHub</a>
-        <a href="https://linkedin.com/in/fathima-zahida-b7923b400">LinkedIn</a>
-        <a href="mailto:fzahida08@gmail.com">Email</a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fas fa-envelope"></i></a>
       </div>
     </section>
   </main>
