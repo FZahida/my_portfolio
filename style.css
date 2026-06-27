@@ -432,6 +432,10 @@ h2 i {
 .form-group {
   position: relative;
 }
+.contact-info {
+  margin-top: 2.5rem;
+  text-align: center;
+}
 
 #contact input,
 #contact textarea {
@@ -465,6 +469,8 @@ h2 i {
   margin-top: 2.5rem;
   display: flex;
   gap: 1.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .social-links a {
@@ -477,6 +483,16 @@ h2 i {
 .social-links a:hover {
   color: var(--primary);
   transform: translateY(-5px) scale(1.1);
+}
+.email-display {
+  margin-top: 0.5rem;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.email-display i {
+  color: var(--primary);
+  margin-right: 0.5rem;
 }
 
 /* ===== FOOTER ===== */
