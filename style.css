@@ -48,7 +48,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== ANIMATED BACKGROUND (NEW) ===== */
+/* ===== ANIMATED BACKGROUND (UPDATED) ===== */
 #particles-js {
   position: fixed;
   top: 0;
@@ -66,10 +66,22 @@ body {
   width: 100%;
   height: 100%;
   z-index: 0;
-  background: 
-    radial-gradient(ellipse at 20% 50%, rgba(108, 99, 255, 0.05) 0%, transparent 60%),
-    radial-gradient(ellipse at 80% 50%, rgba(255, 101, 132, 0.05) 0%, transparent 60%);
   pointer-events: none;
+  background: 
+    radial-gradient(ellipse at 15% 30%, rgba(108, 99, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 85% 70%, rgba(255, 101, 132, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 100%, rgba(108, 99, 255, 0.04) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 101, 132, 0.04) 0%, transparent 40%);
+  animation: gradientPulse 8s ease-in-out infinite;
+}
+
+@keyframes gradientPulse {
+  0%, 100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
 }
 
 /* ===== SCROLLBAR ===== */
