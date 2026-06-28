@@ -1,8 +1,42 @@
-// ===== PARTICLES BACKGROUND  =====
+// ===== CUSTOM CURSOR =====
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+// Track mouse movement
+document.addEventListener('mousemove', (e) => {
+  cursorDot.style.left = e.clientX + 'px';
+  cursorDot.style.top = e.clientY + 'px';
+  cursorOutline.style.left = e.clientX + 'px';
+  cursorOutline.style.top = e.clientY + 'px';
+});
+
+// Click effect - scale down
+document.addEventListener('mousedown', () => {
+  cursorOutline.style.transform = 'scale(0.8)';
+});
+
+// Click effect - scale back
+document.addEventListener('mouseup', () => {
+  cursorOutline.style.transform = 'scale(1)';
+});
+
+// Hover effect on interactive elements
+document.querySelectorAll('a, button, .btn, .project-card, .skill, .edu-card, input, textarea').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    cursorOutline.classList.add('hover');
+    cursorDot.style.transform = 'scale(0.5)';
+  });
+  el.addEventListener('mouseleave', () => {
+    cursorOutline.classList.remove('hover');
+    cursorDot.style.transform = 'scale(1)';
+  });
+});
+
+// ===== PARTICLES BACKGROUND =====
 particlesJS('particles-js', {
   particles: {
     number: {
-      value: 100,
+      value: 80,
       density: {
         enable: true,
         value_area: 800
@@ -157,3 +191,9 @@ window.addEventListener('scroll', () => {
 });
 
 console.log('🚀 Portfolio loaded successfully!');
+console.log('✨ Features active:');
+console.log('  • Custom cursor');
+console.log('  • Particle background');
+console.log('  • Dark/Light mode');
+console.log('  • Form validation');
+console.log('  • Smooth scroll');

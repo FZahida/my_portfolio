@@ -16,7 +16,6 @@
   --transition: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --gradient: linear-gradient(135deg, #6c63ff 0%, #ff6584 100%);
 }
-
 [data-theme="dark"] {
   --bg: #0d0d1a;
   --text: #e8e8f0;
@@ -34,11 +33,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: 'Inter', sans-serif;
   background: var(--bg);
@@ -48,7 +45,53 @@ body {
   overflow-x: hidden;
 }
 
-/* ===== ANIMATED BACKGROUND (UPDATED) ===== */
+/* ===== CUSTOM CURSOR (NEW) ===== */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease;
+  display: none;
+}
+.cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--primary);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9998;
+  transition: all 0.15s ease;
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .cursor-dot,
+  .cursor-outline {
+    display: block;
+  }
+  
+  body {
+    cursor: none;
+  }
+  
+  .cursor-outline.hover {
+    transform: scale(1.5);
+    background: rgba(108, 99, 255, 0.1);
+    border-color: var(--primary-light);
+  }
+}
+@media (hover: none) and (pointer: coarse) {
+  body {
+    cursor: auto;
+  }
+}
+
+/* ===== ANIMATED BACKGROUND ===== */
 #particles-js {
   position: fixed;
   top: 0;
@@ -58,7 +101,6 @@ body {
   z-index: 0;
   pointer-events: none;
 }
-
 .gradient-bg {
   position: fixed;
   top: 0;
@@ -74,7 +116,6 @@ body {
     radial-gradient(ellipse at 50% 0%, rgba(255, 101, 132, 0.04) 0%, transparent 40%);
   animation: gradientPulse 8s ease-in-out infinite;
 }
-
 @keyframes gradientPulse {
   0%, 100% {
     opacity: 0.8;
@@ -111,7 +152,6 @@ header {
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
   transition: background var(--transition);
 }
-
 nav {
   display: flex;
   justify-content: space-between;
@@ -119,20 +159,17 @@ nav {
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
   color: white;
   letter-spacing: -1px;
 }
-
 .nav-links {
   display: flex;
   list-style: none;
   gap: 2.5rem;
 }
-
 .nav-links a {
   color: white;
   text-decoration: none;
@@ -140,7 +177,6 @@ nav {
   transition: color var(--transition);
   position: relative;
 }
-
 .nav-links a::after {
   content: '';
   position: absolute;
@@ -151,15 +187,12 @@ nav {
   background: var(--primary);
   transition: width var(--transition);
 }
-
 .nav-links a:hover::after {
   width: 100%;
 }
-
 .nav-links a:hover {
   color: var(--primary-light);
 }
-
 .nav-actions {
   display: flex;
   align-items: center;
@@ -175,12 +208,10 @@ nav {
   transition: transform var(--transition), color var(--transition);
   padding: 0.3rem;
 }
-
 #theme-toggle:hover {
   transform: rotate(20deg);
   color: var(--primary);
 }
-
 .hamburger {
   display: none;
   font-size: 1.8rem;
@@ -196,7 +227,6 @@ section {
   position: relative;
   z-index: 1;
 }
-
 h2 {
   font-size: 2.5rem;
   margin-bottom: 2.5rem;
@@ -205,7 +235,6 @@ h2 {
   position: relative;
   display: inline-block;
 }
-
 h2::after {
   content: '';
   position: absolute;
@@ -216,7 +245,6 @@ h2::after {
   background: var(--gradient);
   border-radius: 2px;
 }
-
 h2 i {
   color: var(--primary);
   margin-right: 0.5rem;
@@ -247,14 +275,12 @@ h2 i {
 .hero-content h1 span {
   color: var(--primary);
 }
-
 .hero-content .subtitle {
   font-size: 1.4rem;
   color: var(--primary);
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
-
 .hero-content p {
   font-size: 1.1rem;
   margin: 0.8rem 0;
@@ -262,14 +288,12 @@ h2 i {
   transition: color var(--transition);
   max-width: 500px;
 }
-
 .hero-buttons {
   display: flex;
   gap: 1rem;
   margin-top: 1.5rem;
   flex-wrap: wrap;
 }
-
 .btn {
   padding: 0.8rem 2rem;
   border: none;
@@ -283,35 +307,29 @@ h2 i {
   align-items: center;
   gap: 0.5rem;
 }
-
 .btn-primary {
   background: var(--gradient);
   color: white;
   box-shadow: 0 4px 20px rgba(108, 99, 255, 0.3);
 }
-
 .btn-primary:hover {
   transform: translateY(-3px);
   box-shadow: 0 8px 30px rgba(108, 99, 255, 0.4);
 }
-
 .btn-outline {
   background: transparent;
   border: 2px solid var(--primary);
   color: var(--primary);
 }
-
 .btn-outline:hover {
   background: var(--primary);
   color: white;
   transform: translateY(-3px);
 }
-
 .hero-image {
   flex: 1;
   text-align: center;
 }
-
 .hero-image img {
   max-width: 100%;
   width: 300px;
@@ -548,7 +566,6 @@ footer {
     width: 220px;
     height: 280px;
   }
-  
   h2 {
     font-size: 2rem;
   }
@@ -557,12 +574,10 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-
 @media (max-width: 480px) {
   .hero-content h1 {
     font-size: 2rem;
   }
-  
   .hero-image img {
     width: 180px;
     height: 230px;
