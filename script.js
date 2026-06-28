@@ -71,7 +71,7 @@ function typeEffect() {
 
 typeEffect();
 
-// ===== STATS COUNTER ANIMATION  =====
+// ===== STATS COUNTER  =====
 const statNumbers = document.querySelectorAll('.stat-number');
 
 const statsObserver = new IntersectionObserver((entries) => {
@@ -99,6 +99,25 @@ function animateCounter(element, target) {
     }
   }, 30);
 }
+
+// ===== SKILL BAR =====
+const skillBars = document.querySelectorAll('.skill-progress');
+
+const skillObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const width = bar.style.width;
+      bar.style.width = '0%';
+      setTimeout(() => {
+        bar.style.width = width;
+      }, 200);
+      skillObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.3 });
+
+skillBars.forEach(bar => skillObserver.observe(bar));
 
 // ===== PARTICLES BACKGROUND =====
 particlesJS('particles-js', {
@@ -263,6 +282,7 @@ console.log('✨ Features active:');
 console.log('  • Custom cursor');
 console.log('  • Typing animation');
 console.log('  • Animated stats');
+console.log('  • Animated skill bars');
 console.log('  • Particle background');
 console.log('  • Dark/Light mode');
 console.log('  • Form validation');

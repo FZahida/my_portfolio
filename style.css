@@ -519,7 +519,7 @@ h2 i {
 /* ===== SKILLS ===== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -530,8 +530,6 @@ h2 i {
   box-shadow: var(--shadow);
   transition: all var(--transition);
   border: 1px solid var(--border);
-  font-weight: 500;
-  color: var(--text);
 }
 
 .skill:hover {
@@ -540,9 +538,38 @@ h2 i {
   border-color: var(--primary);
 }
 
-.skill i {
+.skill-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+.skill-header i {
   color: var(--primary);
-  margin-right: 0.5rem;
+  font-size: 1.2rem;
+  width: 24px;
+}
+
+.skill-header span {
+  font-weight: 500;
+  color: var(--text);
+  flex: 1;
+}
+
+.skill-bar {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.skill-progress {
+  height: 100%;
+  background: var(--gradient);
+  border-radius: 3px;
+  transition: width 1.5s ease;
+  width: 0%;
 }
 
 /* ===== PROJECTS ===== */
