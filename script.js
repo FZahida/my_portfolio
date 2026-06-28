@@ -71,7 +71,7 @@ function typeEffect() {
 
 typeEffect();
 
-// ===== STATS COUNTER ANIMATION (NEW) =====
+// ===== STATS COUNTER ANIMATION  =====
 const statNumbers = document.querySelectorAll('.stat-number');
 
 const statsObserver = new IntersectionObserver((entries) => {
