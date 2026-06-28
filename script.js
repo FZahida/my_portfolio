@@ -2,7 +2,6 @@
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check saved theme
 const savedTheme = localStorage.getItem('theme');
 if (savedTheme) {
   document.documentElement.setAttribute('data-theme', savedTheme);
@@ -19,11 +18,7 @@ themeToggle.addEventListener('click', () => {
 });
 
 function updateThemeIcon(theme) {
-  if (theme === 'dark') {
-    themeIcon.className = 'fas fa-sun';
-  } else {
-    themeIcon.className = 'fas fa-moon';
-  }
+  themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
 // ===== MOBILE HAMBURGER MENU =====
@@ -34,7 +29,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close menu when a link is clicked (mobile)
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     navLinks.classList.remove('open');
@@ -59,29 +53,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   }, 1500);
 });
 
-// ===== SCROLL REVEAL ANIMATION =====
-const revealElements = document.querySelectorAll('.skill, .project-card, .edu-card');
-
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-}, {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-});
-
-revealElements.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'all 0.8s ease';
-  revealObserver.observe(el);
-});
-
-// ===== SMOOTH SCROLL FOR NAV LINKS =====
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -102,7 +74,7 @@ const navLinksAll = document.querySelectorAll('.nav-links a');
 window.addEventListener('scroll', () => {
   let current = '';
   sections.forEach(section => {
-    const sectionTop = section.offsetTop - 100;
+    const sectionTop = section.offsetTop - 120;
     if (scrollY >= sectionTop) {
       current = section.getAttribute('id');
     }
@@ -111,16 +83,9 @@ window.addEventListener('scroll', () => {
   navLinksAll.forEach(link => {
     link.style.color = 'white';
     if (link.getAttribute('href') === `#${current}`) {
-      link.style.color = '#6c63ff';
+      link.style.color = '#8b83ff';
     }
   });
-});
-
-// ===== KEYBOARD ACCESSIBILITY =====
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    navLinks.classList.remove('open');
-  }
 });
 
 console.log('🚀 Portfolio loaded successfully!');
