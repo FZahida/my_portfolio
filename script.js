@@ -1,4 +1,4 @@
-// CUSTOM CURSOR 
+// ===== CUSTOM CURSOR =====
 const cursorDot = document.querySelector('.cursor-dot');
 const cursorOutline = document.querySelector('.cursor-outline');
 
@@ -28,7 +28,7 @@ document.querySelectorAll('a, button, .btn, .project-card, .skill, .edu-card, in
   });
 });
 
-// TYPING ANIMATION 
+// ===== TYPING ANIMATION =====
 const typingTexts = [
   'Physical Science (ICT) Student',
   'DevOps Enthusiast',
@@ -71,7 +71,36 @@ function typeEffect() {
 
 typeEffect();
 
-// PARTICLES BACKGROUND 
+// ===== STATS COUNTER ANIMATION (NEW) =====
+const statNumbers = document.querySelectorAll('.stat-number');
+
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const target = parseInt(entry.target.dataset.target);
+      animateCounter(entry.target, target);
+      statsObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.5 });
+
+statNumbers.forEach(stat => statsObserver.observe(stat));
+
+function animateCounter(element, target) {
+  let current = 0;
+  const increment = target / 40;
+  const interval = setInterval(() => {
+    current += increment;
+    if (current >= target) {
+      element.textContent = target;
+      clearInterval(interval);
+    } else {
+      element.textContent = Math.floor(current);
+    }
+  }, 30);
+}
+
+// ===== PARTICLES BACKGROUND =====
 particlesJS('particles-js', {
   particles: {
     number: {
@@ -139,7 +168,7 @@ particlesJS('particles-js', {
   retina_detect: true
 });
 
-// DARK MODE TOGGLE 
+// ===== DARK MODE TOGGLE =====
 const themeToggle = document.getElementById('theme-toggle');
 const themeIcon = themeToggle.querySelector('i');
 
@@ -162,7 +191,7 @@ function updateThemeIcon(theme) {
   themeIcon.className = theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 }
 
-// MOBILE HAMBURGER MENU 
+// ===== MOBILE HAMBURGER MENU =====
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.querySelector('.nav-links');
 
@@ -194,7 +223,7 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
   }, 1500);
 });
 
-// SMOOTH SCROLL 
+// ===== SMOOTH SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e) {
     e.preventDefault();
@@ -208,7 +237,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
-// ACTIVE NAV LINK ON SCROLL 
+// ===== ACTIVE NAV LINK ON SCROLL =====
 const sections = document.querySelectorAll('section');
 const navLinksAll = document.querySelectorAll('.nav-links a');
 
@@ -233,6 +262,7 @@ console.log('🚀 Portfolio loaded successfully!');
 console.log('✨ Features active:');
 console.log('  • Custom cursor');
 console.log('  • Typing animation');
+console.log('  • Animated stats');
 console.log('  • Particle background');
 console.log('  • Dark/Light mode');
 console.log('  • Form validation');
