@@ -71,7 +71,7 @@ function typeEffect() {
 
 typeEffect();
 
-// ===== STATS COUNTER  =====
+// ===== STATS COUNTER ANIMATION =====
 const statNumbers = document.querySelectorAll('.stat-number');
 
 const statsObserver = new IntersectionObserver((entries) => {
@@ -100,7 +100,7 @@ function animateCounter(element, target) {
   }, 30);
 }
 
-// ===== SKILL BAR =====
+// ===== SKILL BAR ANIMATION =====
 const skillBars = document.querySelectorAll('.skill-progress');
 
 const skillObserver = new IntersectionObserver((entries) => {
@@ -295,6 +295,23 @@ window.addEventListener('scroll', () => {
   });
 });
 
+// ===== AUTO-UPDATE FOOTER YEAR =====
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// ===== KEYBOARD ACCESSIBILITY  =====
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    navLinks.classList.remove('open');
+  }
+});
+
+// ===== PERFORMANCE: Reduce animations on low-end devices =====
+if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.querySelectorAll('.floating-icon, .ring-ring, .gradient-bg').forEach(el => {
+    el.style.animation = 'none';
+  });
+}
+
 console.log('🚀 Portfolio loaded successfully!');
 console.log('✨ Features active:');
 console.log('  • Custom cursor');
@@ -303,5 +320,7 @@ console.log('  • Animated stats');
 console.log('  • Animated skill bars');
 console.log('  • Particle background');
 console.log('  • Dark/Light mode');
-console.log('  • Form validation');
-console.log('  • Smooth scroll');
+console.log('  • Back to top button');
+console.log('  • Auto-updating footer');
+console.log('  • Accessibility features');
+console.log('  • Responsive design');
