@@ -71,22 +71,22 @@ function typeEffect() {
 
 typeEffect();
 
-// ===== STATS COUNTER ANIMATION =====
-const statNumbers = document.querySelectorAll('.stat-number');
+// ===== ABOUT STATS COUNTER ANIMATION=====
+const aboutStatNumbers = document.querySelectorAll('.about-stat-number');
 
-const statsObserver = new IntersectionObserver((entries) => {
+const aboutStatsObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const target = parseInt(entry.target.dataset.target);
-      animateCounter(entry.target, target);
-      statsObserver.unobserve(entry.target);
+      animateAboutCounter(entry.target, target);
+      aboutStatsObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.5 });
 
-statNumbers.forEach(stat => statsObserver.observe(stat));
+aboutStatNumbers.forEach(stat => aboutStatsObserver.observe(stat));
 
-function animateCounter(element, target) {
+function animateAboutCounter(element, target) {
   let current = 0;
   const increment = target / 40;
   const interval = setInterval(() => {
@@ -316,7 +316,8 @@ console.log('🚀 Portfolio loaded successfully!');
 console.log('✨ Features active:');
 console.log('  • Custom cursor');
 console.log('  • Typing animation');
-console.log('  • Animated stats');
+console.log('  • Animated stats (Hero)');
+console.log('  • Animated stats (About)');
 console.log('  • Animated skill bars');
 console.log('  • Particle background');
 console.log('  • Dark/Light mode');
