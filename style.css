@@ -409,7 +409,7 @@ h2 i {
   margin-right: 0.5rem;
 }
 
-/* ===== CV BUTTON - LARGE (for contact section) ===== */
+/* ===== CV BUTTON ===== */
 .btn-cv-large {
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
@@ -1028,15 +1028,15 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.8rem 2rem 1.2rem;
-  text-align: center; /* ✅ Center everything */
+  text-align: center; 
 }
 
 /* ===== GRADIENT DIVIDER LINE ===== */
 .footer-divider {
-  width: 80%; /* ✅ Longer line */
+  width: 80%; 
   height: 3px;
   background: var(--gradient);
-  margin: 0 auto 1.8rem auto; /* ✅ Centered */
+  margin: 0 auto 1.8rem auto; 
   border-radius: 2px;
   opacity: 0.6;
   transition: width var(--transition);
@@ -1055,11 +1055,11 @@ footer {
   margin-bottom: 1.2rem;
 }
 
-/* ===== BRAND (CENTERED) ===== */
+/* ===== BRAND  ===== */
 .footer-brand {
   display: flex;
   flex-direction: column;
-  align-items: center; /* ✅ Centered */
+  align-items: center; 
   gap: 0.3rem;
 }
 
@@ -1083,11 +1083,11 @@ footer {
   font-size: 0.85rem;
   line-height: 1.4;
   max-width: 300px;
-  margin: 0 auto; /* ✅ Centered */
+  margin: 0 auto; 
   opacity: 0.8;
 }
 
-/* ===== LINKS (CENTERED) ===== */
+/* ===== LINKS ===== */
 .footer-links h4,
 .footer-social h4 {
   font-size: 0.85rem;
@@ -1097,7 +1097,7 @@ footer {
   position: relative;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  display: inline-block; /* ✅ For centered underline */
+  display: inline-block; 
 }
 
 .footer-links h4::after,
@@ -1106,7 +1106,7 @@ footer {
   position: absolute;
   bottom: -4px;
   left: 50%;
-  transform: translateX(-50%); /* ✅ Centered underline */
+  transform: translateX(-50%); 
   width: 30px;
   height: 2px;
   background: var(--gradient);
@@ -1117,7 +1117,7 @@ footer {
   list-style: none;
   display: flex;
   flex-direction: column;
-  align-items: center; /* ✅ Centered */
+  align-items: center; 
   gap: 0.3rem;
   padding: 0;
 }
@@ -1135,10 +1135,10 @@ footer {
   display: inline-block;
 }
 
-/* ===== SOCIAL (CENTERED) ===== */
+/* ===== SOCIAL ===== */
 .social-icons {
   display: flex;
-  justify-content: center; /* ✅ Centered */
+  justify-content: center; 
   gap: 0.8rem;
   margin-top: 0.3rem;
 }
