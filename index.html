@@ -45,7 +45,7 @@
           <div class="hero-buttons">
             <a href="#contact" class="btn btn-primary">Get in Touch<i class="fas fa-arrow-right"></i></a>
             <a href="#projects" class="btn btn-outline">View Projects<i class="fas fa-code"></i></a>
-            <a href="Fathima Zahida CV.docx" download class="btn btn-cv"><i class="fas fa-file-pdf"></i> Download CV</a>
+            <a href="Fathima Zahida CV.pdf" download class="btn btn-cv"><i class="fas fa-file-pdf"></i> Download CV</a>
           </div>
         </div>
         <div class="hero-image">
@@ -58,6 +58,7 @@
             <div class="floating-icon"><i class="fab fa-css3-alt"></i></div>
             <div class="floating-icon"><i class="fab fa-js"></i></div>
             <div class="floating-icon"><i class="fab fa-git-alt"></i></div>
+
           </div>
         </div>
       </section>
@@ -305,47 +306,110 @@
       </section>
 
       <!-- Projects -->
-      <section id="projects">
-        <h2><i class="fas fa-project-diagram"></i> Projects</h2>
-        <div class="project-grid">
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fas fa-truck"></i>
-            </div>
-            <div class="project-content">
-              <h3>Logistics Management System</h3>
-              <p>Streamlined supply chain operations with inventory tracking, order fulfillment, and real‑time shipment monitoring.</p>
-              <div class="project-tech">
-                <span>JAVA</span>
-                <span>MY SQL</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="project-card">
-            <div class="project-image">
-              <i class="fas fa-chart-bar"></i>
-            </div>
-            <div class="project-content">
-              <h3>Sales Management System</h3>
-              <p>A comprehensive platform for managing customer data, product catalogs, invoicing, and generating detailed sales reports.</p>
-              <div class="project-tech">
-                <span>OOP</span>
-                <span>JAVA</span>
-                <span>MY SQL</span>
-              </div>
-              <div class="project-links">
-                <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
-                <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
-              </div>
-            </div>
-          </div>
+<section id="projects">
+  <h2><i class="fas fa-project-diagram"></i> Projects</h2>
+  <div class="project-grid">
+    
+    <!-- Project 1: HarvestHub -->
+    <div class="project-card">
+      <div class="project-image" style="background: linear-gradient(135deg, #00b894, #00cec9);">
+        <i class="fas fa-seedling"></i>
+      </div>
+      <div class="project-content">
+        <h3>HarvestHub — Agricultural Marketplace</h3>
+        <p>Full-stack marketplace platform connecting Sri Lankan farmers directly with buyers, eliminating middlemen. Implemented role-based access for Farmer, Buyer, and Administrator.</p>
+        <div class="project-tech">
+          <span>MongoDB</span>
+          <span>Express.js</span>
+          <span>React</span>
+          <span>Node.js</span>
+          <span>Multer</span>
         </div>
-      </section>
+        <div class="project-status">
+          <span class="status-badge in-progress">🚧 In Progress</span>
+          <span class="status-badge group-project">👥 Group Project</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+          <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2: Logistics Management System -->
+    <div class="project-card">
+      <div class="project-image" style="background: linear-gradient(135deg, #6c63ff, #8b83ff);">
+        <i class="fas fa-truck"></i>
+      </div>
+      <div class="project-content">
+        <h3>Logistics Management System</h3>
+        <p>Streamlined supply chain operations with inventory tracking, order fulfillment, and real‑time shipment monitoring.</p>
+        <div class="project-tech">
+          <span>JAVA</span>
+          <span>MySQL</span>
+        </div>
+        <div class="project-status">
+          <span class="status-badge completed">✅ Completed</span>
+          <span class="status-badge individual">👤 Individual</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+          <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3: Sales Management System -->
+    <div class="project-card">
+      <div class="project-image" style="background: linear-gradient(135deg, #fd79a8, #e17055);">
+        <i class="fas fa-chart-bar"></i>
+      </div>
+      <div class="project-content">
+        <h3>Sales Management System</h3>
+        <p>A comprehensive platform for managing customer data, product catalogs, invoicing, and generating detailed sales reports.</p>
+        <div class="project-tech">
+          <span>OOP</span>
+          <span>JAVA</span>
+          <span>MySQL</span>
+        </div>
+        <div class="project-status">
+          <span class="status-badge completed">✅ Completed</span>
+          <span class="status-badge individual">👤 Individual</span>
+        </div>
+        <div class="project-links">
+          <a href="#" class="btn-small"><i class="fas fa-external-link-alt"></i> Demo</a>
+          <a href="#" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4: Personal Portfolio -->
+    <div class="project-card">
+      <div class="project-image" style="background: linear-gradient(135deg, #6c63ff, #ff6584);">
+        <i class="fas fa-user-circle"></i>
+      </div>
+      <div class="project-content">
+        <h3>Personal Portfolio Website</h3>
+        <p>A fully responsive portfolio website built with HTML, CSS, and JavaScript. Features include dark/light mode, CI/CD automation with GitHub Actions, and interactive UI elements.</p>
+        <div class="project-tech">
+          <span>HTML5</span>
+          <span>CSS3</span>
+          <span>JavaScript</span>
+          <span>GitHub Actions</span>
+        </div>
+        <div class="project-status">
+          <span class="status-badge completed">✅ Completed</span>
+          <span class="status-badge individual">👤 Individual</span>
+        </div>
+        <div class="project-links">
+          <a href="https://FZahida.github.io/my-portfolio" target="_blank" class="btn-small"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+          <a href="https://github.com/FZahida/my-portfolio" target="_blank" class="btn-small"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 
       <!-- Contact -->
     <section id="contact">
@@ -374,7 +438,7 @@
             </div>
           </div>
            <div class="cv-download-container">
-    <a href="Fathima Zahida CV.docx" download class="btn btn-cv btn-cv-large"><i class="fas fa-file-pdf"></i> Download My CV</a>
+    <a href="Fathima Zahida CV.pdf" download class="btn btn-cv btn-cv-large"><i class="fas fa-file-pdf"></i> Download My CV</a>
   </div>
 
         </div>

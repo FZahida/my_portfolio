@@ -1586,3 +1586,66 @@ footer {
     font-size: 1rem;
   }
 }
+
+/* ===== PROJECT STATUS BADGES ===== */
+.project-status {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0 0.8rem;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.2rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.status-badge.completed {
+  background: rgba(0, 200, 150, 0.15);
+  color: #00b894;
+  border: 1px solid rgba(0, 200, 150, 0.2);
+}
+
+.status-badge.in-progress {
+  background: rgba(255, 165, 0, 0.15);
+  color: #f39c12;
+  border: 1px solid rgba(255, 165, 0, 0.2);
+}
+
+.status-badge.group-project {
+  background: rgba(108, 99, 255, 0.15);
+  color: #6c63ff;
+  border: 1px solid rgba(108, 99, 255, 0.2);
+}
+
+.status-badge.individual {
+  background: rgba(0, 150, 255, 0.15);
+  color: #0984e3;
+  border: 1px solid rgba(0, 150, 255, 0.2);
+}
+
+/* Dark mode support */
+[data-theme="dark"] .status-badge.completed {
+  background: rgba(0, 200, 150, 0.2);
+  border-color: rgba(0, 200, 150, 0.3);
+}
+
+[data-theme="dark"] .status-badge.in-progress {
+  background: rgba(255, 165, 0, 0.2);
+  border-color: rgba(255, 165, 0, 0.3);
+}
+
+[data-theme="dark"] .status-badge.group-project {
+  background: rgba(108, 99, 255, 0.2);
+  border-color: rgba(108, 99, 255, 0.3);
+}
+
+[data-theme="dark"] .status-badge.individual {
+  background: rgba(0, 150, 255, 0.2);
+  border-color: rgba(0, 150, 255, 0.3);
+}
