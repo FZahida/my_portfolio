@@ -391,6 +391,73 @@ h2 i {
   transform: translateY(-3px);
 }
 
+/* ===== CV BUTTON ===== */
+.btn-cv {
+  background: var(--gradient);
+  color: white;
+  box-shadow: 0 4px 20px rgba(255, 101, 132, 0.3);
+  border: none;
+}
+
+.btn-cv:hover {
+  transform: translateY(-3px);
+  background: #e55577;
+  box-shadow: 0 8px 30px rgba(255, 101, 132, 0.4);
+}
+
+.btn-cv i {
+  margin-right: 0.5rem;
+}
+
+/* ===== CV BUTTON - LARGE (for contact section) ===== */
+.btn-cv-large {
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all var(--transition);
+}
+
+.btn-cv-large:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(255, 101, 132, 0.4);
+}
+
+/* ===== CV DOWNLOAD CONTAINER ===== */
+.cv-download-container {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .btn-cv-large {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-cv {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .btn-cv-large {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
 /* ===== HERO IMAGE ===== */
 .hero-image {
   flex: 1;
